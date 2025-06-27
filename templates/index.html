@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Code Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans leading-normal tracking-normal">
+
+    <div class="container mx-auto p-8">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h1 class="text-3xl font-bold mb-4 text-indigo-600">AI Code Generator</h1>
+            <p class="mb-4 text-gray-700">Type your prompt:</p>
+            
+            <form method="POST" class="space-y-4">
+                <label class="block text-gray-700 text-sm font-semibold mb-2" for="prompt">Your Instruction</label>
+                <textarea name="prompt" id="prompt" rows="5" required
+                          class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent resize-y"
+                          placeholder="e.g. Write a Python function to check if a number is even"></textarea>
+                <button type="submit"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded-md transition duration-300">
+                    Generate Code
+                </button>
+            </form>
+
+            {% if code_output %}
+            <div class="mt-6">
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Generated Code</h2>
+                <pre class="bg-gray-900 text-green-200 p-4 rounded-md overflow-x-auto whitespace-pre-wrap"><code>{{ code_output }}</code></pre>
+            </div>
+            {% endif %}
+        </div>
+
+        <footer class="mt-8 text-center text-sm text-gray-500">
+            AI Code Generator – Ojash Kumar Jana
+        </footer>
+    </div>
+    
+</body>
+</html>

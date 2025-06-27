@@ -1,0 +1,20 @@
+{"prompt": "Write a function that returns the square of a number", "completion": "def square(n):\n    return n * n"}
+{"prompt": "Create a list comprehension that returns squares from 0 to 9", "completion": "squares = [x**2 for x in range(10)]"}
+{"prompt": "Write a Python function that checks if a number is prime", "completion": "def is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True"}
+{"prompt": "Generate Fibonacci series up to n", "completion": "def fibonacci(n):\n    a, b = 0, 1\n    seq = []\n    while a < n:\n        seq.append(a)\n        a, b = b, a + b\n    return seq"}
+{"prompt": "Reverse a string", "completion": "def reverse_string(s):\n    return s[::-1]"}
+{"prompt": "Sort a list of numbers", "completion": "def sort_list(nums):\n    return sorted(nums)"}
+{"prompt": "Count vowels in a string", "completion": "def count_vowels(s):\n    return sum(ch.lower() in 'aeiou' for ch in s)"}
+{"prompt": "Read an entire text file", "completion": "def read_file(path):\n    with open(path, 'r', encoding='utf-8') as f:\n        return f.read()"}
+{"prompt": "Create a dictionary with keys a,b,c mapping to 1,2,3", "completion": "my_dict = {'a': 1, 'b': 2, 'c': 3}"}
+{"prompt": "Write a Person class with name and age", "completion": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n    def __repr__(self):\n        return f\"{self.name}({self.age})\""}
+{"prompt": "Calculate factorial recursively", "completion": "def factorial(n):\n    return 1 if n == 0 else n * factorial(n - 1)"}
+{"prompt": "Find the maximum number in a list", "completion": "def max_in_list(nums):\n    return max(nums) if nums else None"}
+{"prompt": "Convert Celsius to Fahrenheit", "completion": "def c2f(c):\n    return c * 9 / 5 + 32"}
+{"prompt": "Merge two dictionaries", "completion": "def merge_dicts(d1, d2):\n    return {**d1, **d2}"}
+{"prompt": "Check if a string is a palindrome (ignoring case)", "completion": "def is_palindrome(s):\n    s = ''.join(ch.lower() for ch in s if ch.isalnum())\n    return s == s[::-1]"}
+{"prompt": "Generate a random password of length n", "completion": "import random, string\n\ndef gen_password(n):\n    chars = string.ascii_letters + string.digits\n    return ''.join(random.choice(chars) for _ in range(n))"}
+{"prompt": "Write a context manager that times a code block", "completion": "import time\nfrom contextlib import contextmanager\n\n@contextmanager\ndef timer():\n    start = time.time()\n    yield\n    print(f\"Elapsed: {time.time() - start:.4f}s\")"}
+{"prompt": "Flatten a nested list", "completion": "def flatten(lst):\n    result = []\n    for item in lst:\n        if isinstance(item, list):\n            result.extend(flatten(item))\n        else:\n            result.append(item)\n    return result"}
+{"prompt": "Return the nth Fibonacci number using memoization", "completion": "from functools import lru_cache\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    return n if n < 2 else fib(n-1) + fib(n-2)"}
+{"prompt": "Write a decorator that logs function calls", "completion": "from functools import wraps\n\ndef log_calls(fn):\n    @wraps(fn)\n    def wrapper(*args, **kwargs):\n        print(f\"Calling {fn.__name__}\")\n        return fn(*args, **kwargs)\n    return wrapper"}
